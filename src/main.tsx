@@ -1,23 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-
 import { createWeb3Modal } from '@web3modal/wagmi/react'
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
-
 import { WagmiProvider } from 'wagmi'
 import { arbitrum, mainnet } from 'wagmi/chains'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-// 1. Get projectId from https://cloud.walletconnect.com
-const projectId = 'ed0689b91e26b121d6a6145437c7b857';
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
+if (!projectId) {
+  throw new Error('Missing VITE_WALLETCONNECT_PROJECT_ID. Copy .env.example to .env.local and configure WalletConnect.')
+}
 
-// 2. Create wagmiConfig
 const metadata = {
-  name: 'Web3Modal',
-  description: 'Web3Modal Example',
-  url: 'https://web3modal.com', // origin must match your domain & subdomain
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
+  name: 'Symbiont Wallet Sign',
+  description: 'A wallet connection and message-signing demonstration',
+  url: window.location.origin,
+  icons: [`https://github.com/karisajoshua.png`]
 }
 
 const chains = [mainnet, arbitrum] as const
@@ -26,23 +25,21 @@ const config = defaultWagmiConfig({
   projectId,
   metadata,
   auth: {
-    email: true, // default to true
+    email: true,
     socials: ['google', 'x', 'github', 'discord', 'apple'],
-    showWallets: true, // default to true
-    walletFeatures: true // default to true
+    showWallets: true,
+    walletFeatures: true
   }
 })
 
-// 3. Create modal
 createWeb3Modal({
   wagmiConfig: config,
   projectId,
-  enableAnalytics: true, // Optional - defaults to your Cloud configuration
-  enableOnramp: true // Optional - false as default
+  enableAnalytics: false,
+  enableOnramp: false
 })
 
-const queryClient = new QueryClient();
-
+const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiProvider config={config}>
