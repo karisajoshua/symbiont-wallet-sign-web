@@ -6,3 +6,49 @@
 .brand,.brand:visited{color:#f1f5ff;text-decoration:none}
 .hero h1 span{color:#65e7c9}
 @media(max-width:760px){.hero h1{font-size:clamp(38px,10vw,58px);overflow-wrap:normal}.section-heading h2{font-size:22px}}
+
+
+/* App-style mobile layout: compact home screen, touch targets, fixed tab bar. */
+.mobile-tabbar{display:none}
+html{scroll-behavior:smooth}
+@media(max-width:760px){
+  :root{background:#080e1a}
+  body{background:#080e1a}
+  #root{background:radial-gradient(ellipse 95% 25% at 55% 0%,#1d3c4a 0%,transparent 90%),#080e1a}
+  .shell{width:100%;max-width:520px;padding:0 18px 104px}
+  .topbar{height:76px;border-bottom:0;gap:8px}
+  .brand{font-size:21px;letter-spacing:-.7px}
+  .brand-icon{height:38px;width:38px;border-radius:13px;background:#173b3b;font-family:inherit}
+  .environment{font-size:11px;white-space:nowrap;padding:8px 10px;background:#172735}
+  .hero{padding:25px 0 24px;max-width:none}
+  .eyebrow{font-size:10px;letter-spacing:1.5px}
+  .eyebrow span{display:none}
+  .hero h1{font-size:clamp(32px,8.5vw,43px);line-height:1.14;letter-spacing:-1.3px;margin:13px 0 12px}
+  .hero p{font-size:14px;line-height:1.6;margin:0;color:#b7c7d5}
+  .hero-pills{margin-top:17px;gap:7px}
+  .hero-pills span{padding:7px 11px;font-size:10px;background:#142433;border-color:#28495a;color:#b8d3da}
+  .dashboard{display:flex;flex-direction:column;gap:15px}
+  .workspace{border-radius:23px;padding:21px 18px;background:linear-gradient(150deg,#182b3a,#101b29);border-color:#294353;box-shadow:0 12px 28px rgba(0,0,0,.15)}
+  .section-heading h2{font-size:21px;margin:7px 0;color:#f1f5ff}
+  .step{font-size:10px;letter-spacing:1.5px}
+  .section-mark{font-size:23px}
+  .section-description{font-size:12px;line-height:1.55;margin:7px 0 13px;color:#b5c5d2}
+  .wallet-status,.message-preview{margin:14px 0;border-radius:17px;padding:17px;background:#0d1b29}
+  .wallet-symbol{font-size:30px;margin:11px 0}
+  .address{margin:9px 0 18px;font-size:12px}
+  .network-label{font-size:10px}
+  .button-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .button-primary,.button-secondary{min-height:48px;justify-content:center;text-align:center;padding:12px 9px;font-size:12px;border-radius:13px}
+  .sign-button{display:flex;width:100%;align-items:center;justify-content:space-between;padding:13px 16px}
+  .message-preview{min-height:0}
+  .message-preview>div{font-size:19px;margin:14px 0}
+  .notice{margin-top:17px;padding:16px;border-radius:17px;gap:11px}
+  .notice strong{font-size:12px}
+  .notice p{font-size:11px}
+  footer{padding:23px 0 10px;align-items:center;font-size:9px;text-align:center}
+  .mobile-tabbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;justify-content:space-around;align-items:center;min-height:70px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(12,24,36,.97);border-top:1px solid #294657;backdrop-filter:blur(18px)}
+  .mobile-tabbar a{display:flex;flex:1;min-height:50px;align-items:center;justify-content:center;flex-direction:column;gap:2px;text-decoration:none;color:#b6cad5;font-size:24px;border-radius:12px}
+  .mobile-tabbar a:active,.mobile-tabbar a:focus-visible{background:#183e40;color:#6ce7c9}
+  .mobile-tabbar small{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:10px;font-weight:650}
+  #wallet,#sign,#security{scroll-margin-top:14px}
+}
