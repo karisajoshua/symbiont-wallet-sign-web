@@ -1,15 +1,11 @@
-import appStyle from './App.module.css';
 import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAccount } from 'wagmi'
 
 export default function Buttons() {
-  // 4. Use modal hook
   const { open } = useWeb3Modal()
-
-  return (
-    <div>
-      <button onClick={() => open()}>Connect / Disconnect Wallet</button>
-      <br /><br />
-      <button onClick={() => open({ view: 'Networks' })}>Select Network</button>
-    </div>
-  )
+  const { isConnected } = useAccount()
+  return <div className="button-row">
+    <button className="button-primary" type="button" onClick={() => open()}>{isConnected ? 'Manage wallet' : 'Connect wallet'} <span aria-hidden="true">↗</span></button>
+    <button className="button-secondary" type="button" onClick={() => open({ view: 'Networks' })}>Select network</button>
+  </div>
 }
