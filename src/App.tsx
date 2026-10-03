@@ -6,7 +6,7 @@ import Sign from './components/Sign'
 export default function App() {
   return <div className="site">
     <header className="topbar shell">
-      <a className="brand" href="/" aria-label="Symbiont home"><span className="brand-icon" aria-hidden="true">S</span><span>symbiont<span className="brand-accent">.</span></span></a>
+      <a className="brand" href="/" aria-label="Symbiont home"><span className="brand-icon" aria-hidden="true">S</span><span>symbiont<span className="brand-accent">.</span></span></a>\n      <nav className="desktop-nav" aria-label="Primary navigation"><a href="/">Studio</a><a href="/applications.html">Applications</a></nav>
       <span className="environment"><span className="status-dot" aria-hidden="true" /> Wallet signing demo</span>
     </header>
     <main className="shell">
