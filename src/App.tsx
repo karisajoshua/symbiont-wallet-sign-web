@@ -3,6 +3,7 @@ import Buttons from './components/Buttons'
 import ConnectInfo from './components/ConnectInfo'
 import Sign from './components/Sign'
 import WalletDashboard from './components/WalletDashboard'
+import Authenticate from './components/Authenticate'
 
 export default function App() {
   return <div className="site">
@@ -28,6 +29,7 @@ export default function App() {
           <div className="section-heading"><div><span className="step">STEP 02 / REVIEW & SIGN</span><h2>Message signing</h2></div><span className="section-mark" aria-hidden="true">✳</span></div>
           <p className="section-description">Review the exact message before approving in your wallet. No transaction is submitted.</p>
           <Sign />
+          <Authenticate />
         </article>
       </section>
       <aside className="notice"><span className="notice-icon" aria-hidden="true">ⓘ</span><div><strong>This is a demonstration, not a login service.</strong><p>A signature is displayed locally; it does not authenticate you to Symbiont. Production login requires a server-generated challenge and backend verification. Never share private keys or seed phrases.</p></div></aside>
