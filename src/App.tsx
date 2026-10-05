@@ -2,6 +2,7 @@ import './App.css'
 import Buttons from './components/Buttons'
 import ConnectInfo from './components/ConnectInfo'
 import Sign from './components/Sign'
+import WalletDashboard from './components/WalletDashboard'
 
 export default function App() {
   return <div className="site">
@@ -16,7 +17,7 @@ export default function App() {
         <p>Connect a wallet, review a message and explore cryptographic signing in a transparent workspace.</p>
         <div className="hero-pills" aria-label="Supported networks and application scope"><span>Ethereum</span><span>Arbitrum</span><span>Non-custodial demo</span></div>
       </section>
-      <div className="journey" aria-label="How it works"><span><b>01</b> Connect wallet</span><span aria-hidden="true">→</span><span><b>02</b> Review message</span><span aria-hidden="true">→</span><span><b>03</b> Sign securely</span></div>
+      <WalletDashboard />\n      <div className="journey" aria-label="How it works"><span><b>01</b> Connect wallet</span><span aria-hidden="true">→</span><span><b>02</b> Review message</span><span aria-hidden="true">→</span><span><b>03</b> Sign securely</span></div>
       <section className="dashboard" aria-label="Wallet workspace">
         <article className="workspace">
           <div className="section-heading"><div><span className="step">STEP 01 / CONNECT</span><h2>Wallet connection</h2></div><span className="section-mark" aria-hidden="true">↗</span></div>
